@@ -2,6 +2,8 @@
 
 The prototype of a time management and energy tracking app to help students, young adults, and those who struggle with mental health to gain a better grasp of their energy and time to better accomplish and manage their responsibilities and tasks.
 
+**Live prototype:** https://y1ji3.github.io/seedling/
+
 This repository is a clickable **React + Tailwind** prototype of the Seedling wireframes, made from the Figma file ([Prototype Wireframe → Iteration 2](https://www.figma.com/design/Er0LyA9msoFgsUYBRNd5ot/Prototype-Wireframe?node-id=139-671)). It runs in a "presentation mode": a black background with the app shown inside a phone frame, so the flows can be demoed and later moved into a real app.
 
 ## Getting started
@@ -20,6 +22,13 @@ Then open the URL Vite prints (usually http://localhost:5173).
 | `npm run dev`     | Start the dev server with hot reload      |
 | `npm run build`   | Type-check and build to `dist/`           |
 | `npm run preview` | Serve the production build locally        |
+
+## Deployment
+
+The site is published to GitHub Pages by [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml). Every push to `main` builds the app and publishes `dist/`, so build output is never committed. The workflow can also be run manually from the **Actions** tab.
+
+- **One-time setup:** in the repo, go to **Settings → Pages → Build and deployment → Source** and choose **GitHub Actions**.
+- **Base path:** Pages serves the site from `/seedling/`, so `vite.config.ts` sets `base: '/seedling/'` for builds and `npm run preview` (open http://localhost:4173/seedling/). The dev server still runs at `/`. If the repo is renamed, update `base` to match.
 
 ## Using the prototype
 
