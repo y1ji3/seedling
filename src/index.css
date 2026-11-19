@@ -1,0 +1,83 @@
+@import 'tailwindcss';
+
+/* Design tokens pulled from the Figma file. PTL Spekta (the Figma font) isn't
+   web-licensed, so Figtree stands in as the closest free geometric grotesque. */
+@theme {
+  --font-sans: 'Figtree', ui-sans-serif, system-ui, sans-serif;
+
+  /* Colour roles: olive = primary actions, rust = the "create" accent (FAB only). */
+  --color-olive: #657220;
+  --color-olive-hover: #56611b;
+  --color-olive-tint: #eef0e1;
+  --color-rust: #bb6528;
+  --color-ink: #292929;
+  --color-ink-2: #424242;
+  --color-muted: #616161;
+  --color-line: #b5b5b5;
+  --color-line-soft: #e6e6e6;
+  --color-fill: #ebebeb;
+  --color-card: #f2f2f0;
+  --color-canvas: #fafafa;
+
+  /* Device safe areas (iPhone 16 Pro): status bar + camera, and home indicator.
+     Usable as pt-safe-top, pb-safe-bottom, bottom-safe-bottom, etc. */
+  --spacing-safe-top: 54px;
+  --spacing-safe-bottom: 34px;
+
+  /* Type scale — every screen uses only these six styles. */
+  --text-display: 28px;
+  --text-display--line-height: 34px;
+  --text-display--font-weight: 800;
+  --text-display--letter-spacing: -0.02em;
+  --text-title: 24px;
+  --text-title--line-height: 30px;
+  --text-title--font-weight: 800;
+  --text-title--letter-spacing: -0.01em;
+  --text-section: 17px;
+  --text-section--line-height: 24px;
+  --text-section--font-weight: 700;
+  --text-body: 15px;
+  --text-body--line-height: 22px;
+  --text-body--font-weight: 500;
+  --text-label: 14px;
+  --text-label--line-height: 20px;
+  --text-label--font-weight: 600;
+  --text-caption: 12px;
+  --text-caption--line-height: 16px;
+  --text-caption--font-weight: 600;
+
+  --animate-screen: screen-in 180ms ease-out;
+  --animate-dialog: dialog-in 160ms ease-out;
+
+  @keyframes screen-in {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+  }
+  @keyframes dialog-in {
+    from {
+      opacity: 0;
+      transform: scale(0.96);
+    }
+  }
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  -webkit-font-smoothing: antialiased;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
